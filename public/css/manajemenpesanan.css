@@ -1,0 +1,166 @@
+/* RESET DASAR */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 24px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+/* HEADER */
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* FILTER SECTION */
+.filter-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-container select,
+.filter-container button {
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.filter-container select {
+    flex-grow: 1;
+    max-width: 240px;
+}
+
+/* BUTTON STYLES */
+.btn {
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+.btn-secondary {
+    background-color: #6c757d;
+}
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* ORDER CARD */
+.order-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.order-body p {
+    margin: 6px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* FORM GROUP */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 160px;
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* BADGES */
+.badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+/* STATUS COLORS */
+.status-menunggu-pembayaran {
+    background: #fff0da;
+    color: #ff8800;
+}
+
+.status-pembayaran-diterima {
+    background: #dbf9d8;
+    color: #2e8b57;
+}
+
+.status-dikirim {
+    background: #dceeff;
+    color: #007bff;
+}
+
+.status-selesai {
+    background: #eeeeee;
+    color: #444;
+}
+
+/* LINK STYLES */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* SIMPAN BUTTON */
+.btn-update {
+    background-color: #28a745;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+.btn-update:hover {
+    background-color: #218838;
+}

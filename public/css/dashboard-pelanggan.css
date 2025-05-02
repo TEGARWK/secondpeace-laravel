@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.content-wrapper {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.content-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+.card-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    margin: auto;
+}
+
+.stat-content {
+    display: flex;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.stat-text {
+    font-size: 14px;
+    color: #555;
+}
+
+.icon {
+    color: #ffbf00;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.stat-box img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
