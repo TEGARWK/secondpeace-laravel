@@ -4,7 +4,7 @@
 
 @section('content')
 <header class="mb-4">
-    <link rel="stylesheet" href="{{ asset('css/manajemenproduk.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/manajemen-produk.css') }}">
 </header>
 
 <div class="container">
@@ -17,7 +17,7 @@
                 type="text" 
                 name="search" 
                 class="form-control w-25" 
-                placeholder="Cari berdasarkan ID Produk" 
+                placeholder="Cari ID Produk" 
                 value="{{ request('search') }}"
             >
             <button type="submit" class="btn btn-primary ms-2">Cari</button>

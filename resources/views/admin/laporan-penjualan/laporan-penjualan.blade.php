@@ -19,7 +19,7 @@
             <input type="date" name="end_date" id="end_date" value="{{ request('end_date') }}">
         </div>
         <div class="form-group btn-group">
-            <button type="submit" class="btn btn-success">Tampilkan</button>
+            <button type="submit" class="btn btn-success">Filter</button>
             <a href="{{ route('laporan-penjualan') }}" class="btn btn-secondary">Reset</a>
         </div>
         <div class="form-group">

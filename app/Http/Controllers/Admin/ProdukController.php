@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
 class ProdukController extends Controller
 {
@@ -21,12 +22,12 @@ class ProdukController extends Controller
 
         $produk = $query->get();
 
-        return view('manajemenproduk', compact('produk'));
+        return view('admin.produk.manajemen-produk', compact('produk'));
     }
 
     public function create()
     {
-        return view('tambah_produk');
+        return view('admin.produk.tambah-produk');
     }
 
     public function store(Request $request)
@@ -66,7 +67,7 @@ class ProdukController extends Controller
     public function edit($id)
 {
     $produk = Produk::findOrFail($id);
-    return view('edit_produk', compact('produk'));
+    return view('admin.produk.edit-produk', compact('produk'));
 }
 
     public function update(Request $request, $id)
@@ -111,7 +112,7 @@ class ProdukController extends Controller
         return redirect()->route('manajemen.produk')->with('success', 'Produk berhasil diperbarui');
     }
 
-    public function destroy($id)
+    public function destroy($id)    
     {
         $produk = Produk::findOrFail($id);
 

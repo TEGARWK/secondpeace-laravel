@@ -35,7 +35,7 @@ class LoginController extends Controller
 
         if ($user && Hash::check($request->password, $user->password)) {
             Auth::login($user);
-            return redirect()->route('dashboard')->with('success', 'Login admin berhasil!');
+            return redirect()->route('admin.dashboard')->with('success', 'Login admin berhasil!');
         }
 
         return back()->withErrors(['login_error' => 'Username atau password salah, atau bukan admin.']);

@@ -99,7 +99,7 @@
             <h2 class="sidebar-title">SECOND PEACE</h2>
             <ul class="sidebar-menu">
                 <li class="active">
-                    <a href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt"></i>   Dashboard</a>
+                    <a href="{{ route('admin.dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="{{ route('manajemen.produk') }}"><i class="fas fa-box"></i> Manajemen Produk</a>

@@ -4,7 +4,7 @@
 
 @section('content')
 <header class="mb-4">
-    <link rel="stylesheet" href="{{ asset('css/metodepembayaran.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/metode-pembayaran.css') }}">
 </header>
 
 <div class="metode-container">

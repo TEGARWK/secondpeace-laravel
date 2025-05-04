@@ -1,14 +1,17 @@
 <?php
 
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\LaporanPenjualanController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MidtransController;
-use App\Http\Controllers\ProdukController;
+use Illuminate\Support\Facades\Route;
+
+// Admin Controller
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\LaporanPenjualanController;
+use App\Http\Controllers\Admin\ProdukController;
+use App\Http\Controllers\Admin\PesananController;
 use App\Http\Middleware\AdminAuth;
+
+// Pelanggan Controller
 use App\Http\Middleware\PelangganAuth;
-use App\Http\Controllers\PesananController;
 
 // Redirect ke login admin
 Route::get('/', function () {
@@ -37,35 +40,30 @@ Route::post('/login/pelanggan', [LoginController::class, 'loginPelanggan'])->nam
 // =======================
 Route::middleware(['auth', AdminAuth::class])->group(function () {
 
-    // dahboard
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])
+    ->name('admin.dashboard');
 
     // manajemen produk
-    Route::get('/manajemen-produk', [ProdukController::class, 'index'])->name('manajemen.produk');
+    Route::get('/admin/produk/manajemen-produk', [ProdukController::class, 'index'])->name('manajemen.produk');
     Route::get('/produk/edit/{id}', [ProdukController::class, 'edit'])->name('produk.edit');
     Route::put('/produk/update/{id}', [ProdukController::class, 'update'])->name('produk.update');
-    Route::delete('/produk/delete/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
-    Route::get('/produk/tambah-produk', [ProdukController::class, 'create'])->name('produk.create');
-    Route::post('/produk/store', [ProdukController::class, 'store'])->name('produk.store');
+    Route::delete('/admin/produk/delete/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
+    Route::get('/admin/produk/tambah-produk', [ProdukController::class, 'create'])->name('produk.create');
+    Route::post('/admin/produk/store', [ProdukController::class, 'store'])->name('produk.store');
 
     // manajemen pesanan
-    Route::get('/manajemen-pesanan', [PesananController::class, 'index'])->name('manajemen.pesanan');
+    Route::get('/admin/pesanan/manajemen-pesanan', [PesananController::class, 'index'])->name('manajemen.pesanan');
+
     // laporan penjualan
-    Route::get('/laporan-penjualan', [LaporanPenjualanController::class, 'index'])->name('laporan-penjualan');
-    Route::get('/laporan-penjualan/download', [LaporanPenjualanController::class, 'downloadPDF'])->name('laporan-penjualan.download');
+    Route::get('/admin/laporan-penjualan/laporan-penjualan', [LaporanPenjualanController::class, 'index'])->name('laporan-penjualan');
+    Route::get('/admin/laporan-penjualan/laporan-penjualan/download', [LaporanPenjualanController::class, 'downloadPDF'])->name('laporan-penjualan.download');
 
-    // midtrans
-    Route::post('/midtrans/callback', [MidtransController::class, 'callbackHandler']);
-    Route::get('/snap-token/{id}', [MidtransController::class, 'getSnapToken']);
-
-    // Route::get('/metode-pembayaran', function () {
-    //     return view('metodepembayaran');
+    // Route::get('/admin/pembayaran/metode-pembayaran', function () {
+    //     return view('admin.pembayaran.metode-pembayaran');
     // })->name('metode.pembayaran');
 
-    // Route::get('/ekspedisi', function () {
-    //     return view('ekspedisi');
+    // Route::get('/admin/ekspedisi/ekspedisi', function () {
+    //     return view('admin.ekspedisi.ekspedisi');
     // })->name('ekspedisi');
 
 });
@@ -74,11 +72,7 @@ Route::middleware(['auth', AdminAuth::class])->group(function () {
 // DASHBOARD PELANGGAN (Hanya setelah login pelanggan)
 // =======================
 Route::middleware(['auth', PelangganAuth::class])->group(function () {
-    Route::get('/dashboard/pelanggan', function () {
-        return view('dashboard-pelanggan');
+    Route::get('/pelanggan/dashboard', function () {
+        return view('pelanggan.dashboard-pelanggan');
     })->name('dashboard.pelanggan');
-
-    // Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
-    // Route::post('/checkout/token', [CheckoutController::class, 'getSnapToken'])->name('checkout.token');
-    // Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
 });

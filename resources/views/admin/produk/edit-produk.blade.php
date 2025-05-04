@@ -4,7 +4,7 @@
 
 @section('content')
 <header class="mb-4">
-    <link rel="stylesheet" href="{{ asset('css/tambah_produk.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/tambah-produk.css') }}">
 </header>
 
 <div class="admin-container">

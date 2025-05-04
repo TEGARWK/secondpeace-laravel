@@ -4,7 +4,7 @@
 
 @section('content')
 <header class="mb-4">
-    <link rel="stylesheet" href="{{ asset('css/tambah_produk.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/tambah-produk.css') }}">
 </header>
 
 <div class="admin-container">
@@ -36,8 +36,14 @@
 
             <div class="form-group mb-3">
                 <label for="kategori_produk">Kategori Produk</label>
-                <input type="text" id="kategori_produk" name="kategori_produk" class="form-control" placeholder="Masukkan kategori produk" required>
-            </div>
+                <select id="kategori_produk" name="kategori_produk" class="form-control" required>
+                    <option value="" disabled selected>Pilih kategori produk</option>
+                    <option value="Pria">Pria</option>
+                    <option value="Wanita">Wanita</option>
+                    <option value="Unisex">Unisex</option>
+                    <option value="Aksesoris">Aksesoris</option>
+                </select>
+            </div>            
 
             <div class="form-group mb-3">
                 <label for="deskripsi">Deskripsi</label>

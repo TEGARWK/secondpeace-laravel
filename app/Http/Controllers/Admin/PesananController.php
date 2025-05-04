@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
+use App\Http\Controllers\Controller;
 
 class PesananController extends Controller
 {
@@ -17,6 +18,6 @@ class PesananController extends Controller
         ->orderBy('created_at', 'desc')
         ->get();
 
-        return view('manajemenpesanan', compact('pesanan'));
+        return view('admin.pesanan.manajemen-pesanan', compact('pesanan'));
     }
 }

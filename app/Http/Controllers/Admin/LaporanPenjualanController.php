@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Barryvdh\DomPDF\Facade as PDF;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+use App\Http\Controllers\Controller;
 
 class LaporanPenjualanController extends Controller
 {
@@ -30,7 +30,7 @@ class LaporanPenjualanController extends Controller
 
         $laporan = $query->orderBy('pesanan.created_at', 'desc')->get();
 
-        return view('laporan-penjualan', compact('laporan'));
+        return view('admin.laporan-penjualan.laporan-penjualan', compact('laporan'));
     }
 
     public function downloadPDF(Request $request)
@@ -66,7 +66,7 @@ class LaporanPenjualanController extends Controller
         $fileName = "Laporan Penjualan-{$startDate}-{$endDate}.pdf";
 
         // Generate PDF dengan view yang sudah dibuat
-        $pdf = FacadePdf::loadView('penjualan-pdf', compact('laporan', 'totalSemua'));
+        $pdf = FacadePdf::loadView('admin.laporan-penjualan.penjualan-pdf', compact('laporan', 'totalSemua'));
 
         // Download PDF dengan nama file dinamis
         return $pdf->download($fileName);
