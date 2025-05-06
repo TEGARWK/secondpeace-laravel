@@ -53,6 +53,11 @@ Route::middleware(['auth', AdminAuth::class])->group(function () {
 
     // manajemen pesanan
     Route::get('/admin/pesanan/manajemen-pesanan', [PesananController::class, 'index'])->name('manajemen.pesanan');
+    Route::post('/admin/pesanan/update/{id}', [PesananController::class, 'update'])->name('pesanan.update');
+    Route::get('/admin/pesanan/detail-pesanan/{id}', function ($id) {
+        $pesanan = \App\Models\Pesanan::with('detailPesanan.produk', 'user')->findOrFail($id);
+        return view('admin.pesanan.rincian-pesanan', compact('pesanan'));
+    })->name('rincian.pesanan');    
 
     // laporan penjualan
     Route::get('/admin/laporan-penjualan/laporan-penjualan', [LaporanPenjualanController::class, 'index'])->name('laporan-penjualan');

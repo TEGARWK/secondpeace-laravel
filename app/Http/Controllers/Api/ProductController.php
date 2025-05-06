@@ -8,18 +8,17 @@ use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
-    // ✅ HANYA Menampilkan semua produk untuk pelanggan
+    // ✅ HANYA Menampilkan stok produk yang tersedia untuk pelanggan
     public function index()
-{
-    $products = Produk::all()->map(function ($product) {
-        $product->gambar = url('uploads/' . $product->gambar);
-        return $product;
-    });
+    {
+        $products = Produk::where('stok', '>', 0)->get()->map(function ($product) {
+            $product->gambar = url('uploads/' . $product->gambar);
+            return $product;
+        });
 
-    return response()->json([
-        'success' => true,
-        'products' => $products,
-    ]);
-}
-
+        return response()->json([
+            'success' => true,
+            'products' => $products,
+        ]);
+    }
 }

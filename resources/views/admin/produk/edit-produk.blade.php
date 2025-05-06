@@ -55,7 +55,7 @@
             </div>
 
             <div class="form-group mb-3">
-                <label for="gambar">Gambar Produk (Biarkan kosong jika tidak ingin mengubah)</label>
+                <label for="gambar">Gambar Produk</label>
                 <input type="file" id="gambar" name="gambar" class="form-control">
                 @if($produk->gambar)
                     <img src="{{ asset('uploads/' . $produk->gambar) }}" alt="gambar produk" class="img-thumbnail mt-2" width="150">

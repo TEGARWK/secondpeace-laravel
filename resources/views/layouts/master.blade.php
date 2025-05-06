@@ -73,6 +73,7 @@
         .sidebar-menu .active {
             background-color: #444; /* Warna aktif */
             font-weight: bold;
+            border-left: 5px solid #32d22f;
         }
 
         .logout {

@@ -25,10 +25,10 @@ class UserSeeder extends Seeder
 
         // Pelanggan
         User::create([
-            'username' => 'pelanggan',
-            'nama' => 'pelanggan',
-            'email' => 'pelanggan@gmail.com',
-            'password' => Hash::make('1'),
+            'username' => 'pino',
+            'nama' => 'pino',
+            'email' => 'pino@gmail.com',
+            'password' => Hash::make('password123'),
             'role' => 'pelanggan',
             'foto_profil' => null,
         ]);

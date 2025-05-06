@@ -41,6 +41,7 @@
                     <option value="Pria">Pria</option>
                     <option value="Wanita">Wanita</option>
                     <option value="Unisex">Unisex</option>
+                    <option value="Aksesoris">Sepatu</option>
                     <option value="Aksesoris">Aksesoris</option>
                 </select>
             </div>            

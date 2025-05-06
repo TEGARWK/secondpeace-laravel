@@ -46,12 +46,12 @@
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.admin-container .btn-primary {
-  background-color: #007bff;
+.admin-container .btn-primary { 
+  background-color: #212529;
   color: white;
 }
 .admin-container .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #5a6268;
   transform: scale(1.05);
 }
 

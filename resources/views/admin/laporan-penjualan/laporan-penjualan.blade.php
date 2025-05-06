@@ -18,20 +18,18 @@
             <label for="end_date">Tanggal Selesai:</label>
             <input type="date" name="end_date" id="end_date" value="{{ request('end_date') }}">
         </div>
-        <div class="form-group btn-group">
+        <div class="equal-button-group mt-2">
             <button type="submit" class="btn btn-success">Filter</button>
             <a href="{{ route('laporan-penjualan') }}" class="btn btn-secondary">Reset</a>
-        </div>
-        <div class="form-group">
             <a href="{{ route('laporan-penjualan.download', ['start_date' => request('start_date'), 'end_date' => request('end_date')]) }}"
                 class="btn btn-dark">📄 Download PDF</a>
-        </div>
+        </div>               
     </form>
 
     <table class="laporan-table">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>ID Pesanan</th>
                 <th>Tanggal</th>
                 <th>Pelanggan</th>
                 <th>Produk</th>

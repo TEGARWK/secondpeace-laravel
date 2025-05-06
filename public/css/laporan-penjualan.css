@@ -30,6 +30,20 @@ body {
 }
 
 /* Form filter */
+.equal-height-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.equal-height-buttons > * {
+    height: 45px; /* sesuaikan tinggi */
+    padding: 0 20px; /* jarak dalam tombol */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
 .filter-form {
     display: flex;
     flex-wrap: wrap;
@@ -81,12 +95,12 @@ body {
 }
 
 .filter-form button {
-    background-color: #28a745;
+    background-color: #007bff;
     cursor: pointer;
 }
 
 .filter-form button:hover {
-    background-color: #218838;
+    background-color: #0069d9;
 }
 
 .filter-form a {
